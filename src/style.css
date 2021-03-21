@@ -1,0 +1,111 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+  ul,ol{
+    list-style: none;
+  }
+  .icon {
+    width: 1em; height: 1em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+  }
+#canvas {
+  margin: 0;
+  padding: 0;
+  vertical-align: top;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.tools {
+  position: fixed;
+  width:100%;
+  top: 30px;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  text-align: center
+}
+.tools button{
+  border-radius: 50%;
+  width: 50px;height: 50px; 
+  background-color: rgba(255,255,255,0.7);
+  border: 1px solid #eee;
+  outline: none;
+  cursor: pointer;
+  box-sizing: border-box;
+  margin: 0 10px;
+  text-align: center;
+  color:#333;
+  line-height: 50px;
+  box-shadow:0 0 8px rgba(0,0,0,0.1); 
+  transition: 0.3s;
+}
+.tools button.active,.tools button:active{
+  box-shadow: 0 0 15px #23eed8;
+}
+.tools button svg{font-size: 24px;}
+
+.color-wrapper{
+  position: fixed;
+  top: 110px;
+  left: 15px;
+}
+ul{
+  position: absolute;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+ul>li{
+  border-radius: 50%;
+  width:20px;
+  height: 20px;
+  margin: 15px 0;
+  transition: all 0.3s;
+}
+ul>li.active{
+  box-shadow: 0px 0px 20px -7px rgba(0,0,0,0.75);
+  transform: scale(1.5);
+}
+ul>li.black{
+  background-color: black;
+}
+ul>li.red{
+  background-color: #fc7c7f;
+}
+ul>li.yellow{
+  background-color: #fcd446;
+}
+ul>li.blue{
+  background-color: #39d2fb;
+}
+ul>li.green{
+  background-color: #23eed8;
+}
+ul>li.purple{
+  background-color: #8e78d1;  
+}
+.whole-wrapper{
+  position: fixed;
+  top: 0;
+  left: 200px;
+  height: 44px;
+}
+
+@media screen and (max-width: 400px) {
+  .tools{bottom:auto;top:20px; display: flex; flex-flow: row wrap;}
+  .tools button{
+    width: 15%;
+    min-width: 15%; 
+    max-width: 15%; 
+    margin-bottom: 15px;box-shadow:0 0 5px rgba(0,0,0,0.1);}
+  .tools button.active,.tools button:active{box-shadow: 0 0 5px #23eed8;}
+  .tools button svg{font-size: 18px;}
+  .tools #swatches{display: none}
+  .color-wrapper {left: 0;top:auto;bottom: 40px;display: flex;width:100%;justify-content: center;text-align: center;transform: translate(0,0)}
+  .color-wrapper  ul li{display: inline-block;margin:0 5px;}
+  .color-wrapper  ul li.active{box-shadow:0 0 10px #23eed8;}
+}
